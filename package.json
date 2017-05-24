@@ -1,0 +1,16 @@
+{
+  "name": "timonlukas.me-git",
+  "version": "1.0.0",
+  "description": "Does everything that's needed to update other sites",
+  "main": "app.js",
+  "repository": "https://github.com/TimonLukas/timonlukas.me-git.git",
+  "author": "Timon Lukas <timon.lukas3@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "semistandard": "^11.0.0"
+  }
+}
