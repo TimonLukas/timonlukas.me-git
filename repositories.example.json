@@ -1,0 +1,9 @@
+{
+  "USERNAME/REPOSITORY": {
+    "directory": "DIRECTORY WITH YOUR GIT REPOSITORY",
+    "commands": [
+      "COMMAND1",
+      "COMMAND2"
+    ]
+  }
+}

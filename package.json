@@ -8,7 +8,8 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "lodash": "^4.17.4"
   },
   "devDependencies": {
     "semistandard": "^11.0.0"
