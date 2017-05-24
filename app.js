@@ -15,9 +15,10 @@ app.use((request, response) => {
   response.end();
   const hookData = request.body;
   const repositoryName = _.get(hookData, 'repository.full_name', '');
+  const version = _.get(hookData, 'release.tag_name');
 
   if (typeof repositories[repositoryName] !== 'undefined') {
-    console.log(`Deploying new version of ${repositoryName}`);
+    console.log(`Deploying new version ${version} of ${repositoryName}`);
     const repository = repositories[repositoryName];
     const cwd = repository.directory;
 
@@ -38,6 +39,8 @@ app.use((request, response) => {
           }
         });
       };
+
+      console.log(`Version ${version} of ${repositoryName} was successfully deployed!\n\n`);
 
       executeCommand(commands, cwd);
     }
