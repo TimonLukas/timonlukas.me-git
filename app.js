@@ -36,11 +36,11 @@ app.use((request, response) => {
 
           if (commands.length > 1) {
             executeCommand(commands.slice(1), cwd);
+          } else {
+            console.log(`Version ${version} of ${repositoryName} was successfully deployed!\n\n`);
           }
         });
       };
-
-      console.log(`Version ${version} of ${repositoryName} was successfully deployed!\n\n`);
 
       executeCommand(commands, cwd);
     }
