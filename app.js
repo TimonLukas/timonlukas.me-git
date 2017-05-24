@@ -17,6 +17,7 @@ app.use((request, response) => {
   const repositoryName = _.get(hookData, 'repository.full_name', '');
 
   if (typeof repositories[repositoryName] !== 'undefined') {
+    console.log(`Deploying new version of ${repositoryName}`);
     const repository = repositories[repositoryName];
     const cwd = repository.directory;
 
@@ -24,10 +25,13 @@ app.use((request, response) => {
       const commands = repository.commands;
 
       const executeCommand = (commands, cwd) => {
+        console.log(`Executing ${commands[0]}...`);
         childProcess.exec(commands[0], {cwd}, (error) => {
           if (error !== null) {
             throw error;
           }
+
+          console.log(`${commands[0]} successfully finished!`);
 
           if (commands.length > 1) {
             executeCommand(commands.slice(1), cwd);
